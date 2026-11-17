@@ -44,9 +44,58 @@
   <header class="navbar-custom">
     <div class="container d-flex align-items-center justify-content-between">
       
-      <!-- Marca / Logo Oficial Boudalaire na Paleta Café & Caramelo -->
-      <a href="#" class="brand-wrapper">
-        <img src="assets/svg/logo/baudalaire-logo.svg" alt="BOUDALAIRE — Sabor em Cada Detalhe" class="brand-logo-img">
+      <!-- Marca / Logo Oficial Boudalaire (Renderizado em SVG Vetorial Nativo) -->
+      <a href="#" class="brand-wrapper" aria-label="BOUDALAIRE — Início">
+        <svg class="brand-logo-svg" viewBox="0 0 460 115" height="52" width="208" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="navCoffeeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#8C6239" />
+              <stop offset="50%" stop-color="#533B2B" />
+              <stop offset="100%" stop-color="#38251A" />
+            </linearGradient>
+            <linearGradient id="navLatteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#D4A373" />
+              <stop offset="50%" stop-color="#C69255" />
+              <stop offset="100%" stop-color="#8C6239" />
+            </linearGradient>
+          </defs>
+          <!-- Emblema: Chapéu de Chef + B + Garfo + Cloche -->
+          <g transform="translate(10, 6)">
+            <circle cx="56" cy="52" r="48" fill="#E8DAC8" opacity="0.35" />
+            <!-- Toque de Chef -->
+            <path d="M 36,22 C 32,12 42,6 50,10 C 56,4 70,6 73,14 C 80,10 88,16 86,24 C 88,28 82,32 78,33 L 42,33 C 38,30 34,27 36,22 Z" fill="url(#navCoffeeGrad)" />
+            <rect x="40" y="32" width="40" height="5" rx="1.5" fill="#D4A373" />
+            <!-- Letra B -->
+            <path d="M 44,37 L 44,88 L 66,88 C 78,88 86,80 86,71 C 86,64 80,60 72,58 C 78,56 82,50 82,45 C 82,38 76,37 64,37 Z M 54,45 L 62,45 C 68,45 72,47 72,51 C 72,55 68,57 62,57 L 54,57 Z M 54,66 L 64,66 C 71,66 76,69 76,74 C 76,80 71,81 64,81 L 54,81 Z" fill="url(#navCoffeeGrad)" />
+            <!-- Garfo -->
+            <path d="M 28,78 Q 43,68 60,48" fill="none" stroke="url(#navLatteGrad)" stroke-width="3" stroke-linecap="round" />
+            <path d="M 58,49 L 61,44 M 60,51 L 64,46 M 62,53 L 66,48" stroke="url(#navLatteGrad)" stroke-width="1.8" stroke-linecap="round" />
+            <!-- Cloche -->
+            <g transform="translate(80, 44)">
+              <circle cx="26" cy="8" r="3.5" fill="url(#navLatteGrad)" />
+              <path d="M 6,26 C 6,12 16,8 26,8 C 36,8 46,12 46,26 Z" fill="url(#navCoffeeGrad)" />
+              <line x1="2" y1="26" x2="50" y2="26" stroke="url(#navLatteGrad)" stroke-width="3" stroke-linecap="round" />
+              <line x1="0" y1="29" x2="52" y2="29" stroke="url(#navCoffeeGrad)" stroke-width="1.5" stroke-linecap="round" />
+              <!-- Fumaça Cloche -->
+              <path d="M 26,5 Q 30,1 28,-3" stroke="#D4A373" stroke-width="1.5" stroke-linecap="round" opacity="0.8">
+                <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2s" repeatCount="indefinite" />
+                <animate attributeName="d" values="M 26,5 Q 30,1 28,-3; M 26,5 Q 23,1 26,-3; M 26,5 Q 30,1 28,-3" dur="2.5s" repeatCount="indefinite" />
+              </path>
+            </g>
+            <!-- Fita curva -->
+            <path d="M 18,87 Q 58,79 120,87 Q 63,82 18,87 Z" fill="url(#navLatteGrad)" />
+          </g>
+          <!-- NOME DA MARCA: BOUDALAIRE -->
+          <text x="162" y="62" font-family="'Cinzel', Georgia, serif" font-size="38" font-weight="900" fill="#533B2B" letter-spacing="3.2">BOUDALAIRE</text>
+          <!-- SLOGAN -->
+          <text x="164" y="82" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#8C6239" letter-spacing="4.8">SABOR EM CADA DETALHE</text>
+          <!-- Linha com talheres decorativos -->
+          <g transform="translate(164, 91)">
+            <line x1="0" y1="0" x2="88" y2="0" stroke="#D4A373" stroke-width="1" opacity="0.6" />
+            <path d="M 98,-4 L 106,4 M 106,-4 L 98,4" stroke="#8C6239" stroke-width="1.8" stroke-linecap="round" />
+            <line x1="116" y1="0" x2="238" y2="0" stroke="#D4A373" stroke-width="1" opacity="0.6" />
+          </g>
+        </svg>
       </a>
 
       <!-- Navegação Desktop Focada no Cardápio -->

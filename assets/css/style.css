@@ -167,14 +167,17 @@ h1, h2, h3, h4, .font-serif, .font-luxury {
   text-decoration: none;
 }
 
-.brand-logo-img {
-  height: 48px;
+.brand-logo-img,
+.brand-logo-svg {
+  height: 52px;
   width: auto;
-  object-fit: contain;
+  max-width: 220px;
+  display: block;
   transition: transform var(--transition-smooth);
 }
 
-.brand-wrapper:hover .brand-logo-img {
+.brand-wrapper:hover .brand-logo-img,
+.brand-wrapper:hover .brand-logo-svg {
   transform: scale(1.03);
 }
 
