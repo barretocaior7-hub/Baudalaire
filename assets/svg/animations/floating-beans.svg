@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <!-- Gradiente Grão de Café -->
+    <linearGradient id="beanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7B5035" />
+      <stop offset="50%" stop-color="#4A3528" />
+      <stop offset="100%" stop-color="#2D1E17" />
+    </linearGradient>
+
+    <!-- Gradiente Folha de Café -->
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8DA778" />
+      <stop offset="100%" stop-color="#4E683E" />
+    </linearGradient>
+
+    <!-- Definição do Grão de Café Reutilizável -->
+    <g id="singleBean">
+      <ellipse cx="0" cy="0" rx="14" ry="9" fill="url(#beanGrad)" />
+      <!-- Fissura clássica do grão -->
+      <path d="M -10,0 Q -2,4 0,0 Q 2,-4 10,0" fill="none" stroke="#2D1E17" stroke-width="2.2" stroke-linecap="round" />
+      <path d="M -9,-0.5 Q -2,3.5 0,-0.5 Q 2,-4.5 9,-0.5" fill="none" stroke="#D4A373" stroke-width="0.8" opacity="0.4" />
+    </g>
+
+    <!-- Definição da Folha Reutilizável -->
+    <g id="singleLeaf">
+      <path d="M 0,0 Q 15,-12 30,0 Q 15,12 0,0 Z" fill="url(#leafGrad)" />
+      <path d="M 0,0 L 28,0" stroke="#FFFFFF" stroke-width="0.8" opacity="0.4" />
+    </g>
+  </defs>
+
+  <!-- Grão 1: Flutuação suave central -->
+  <g transform="translate(60, 70)">
+    <animateTransform attributeName="transform" type="translate"
+      values="60,70; 63,55; 58,70" dur="6s" repeatCount="indefinite" />
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+        values="15; 28; 15" dur="6s" repeatCount="indefinite" />
+      <use href="#singleBean" transform="scale(1.1)" />
+    </g>
+  </g>
+
+  <!-- Grão 2: Flutuação diagonal direita -->
+  <g transform="translate(145, 120)">
+    <animateTransform attributeName="transform" type="translate"
+      values="145,120; 140,135; 145,120" dur="7s" begin="1s" repeatCount="indefinite" />
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+        values="-30; -45; -30" dur="7s" begin="1s" repeatCount="indefinite" />
+      <use href="#singleBean" transform="scale(0.85)" opacity="0.9" />
+    </g>
+  </g>
+
+  <!-- Grão 3: Pequeno ao fundo -->
+  <g transform="translate(130, 40)">
+    <animateTransform attributeName="transform" type="translate"
+      values="130,40; 135,28; 130,40" dur="8s" begin="2.5s" repeatCount="indefinite" />
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+        values="75; 90; 75" dur="8s" begin="2.5s" repeatCount="indefinite" />
+      <use href="#singleBean" transform="scale(0.6)" opacity="0.75" />
+    </g>
+  </g>
+
+  <!-- Folha 1: Balanço suave orgânico -->
+  <g transform="translate(30, 130)">
+    <animateTransform attributeName="transform" type="translate"
+      values="30,130; 35,118; 30,130" dur="7.5s" begin="0.5s" repeatCount="indefinite" />
+    <g>
+      <animateTransform attributeName="transform" type="rotate"
+        values="-25; -10; -25" dur="7.5s" begin="0.5s" repeatCount="indefinite" />
+      <use href="#singleLeaf" transform="scale(0.9)" opacity="0.85" />
+    </g>
+  </g>
+
+  <!-- Brilhos estelares sutis de aroma -->
+  <g transform="translate(90, 35)">
+    <path d="M 0,-5 L 1.2,-1.2 L 5,0 L 1.2,1.2 L 0,5 L -1.2,1.2 L -5,0 L -1.2,-1.2 Z" fill="#D4A373">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.5s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="scale" values="0.8;1.3;0.8" dur="2.5s" repeatCount="indefinite" />
+    </path>
+  </g>
+  <g transform="translate(165, 80)">
+    <path d="M 0,-4 L 1,-1 L 4,0 L 1,1 L 0,4 L -1,1 L -4,0 L -1,-1 Z" fill="#C69255">
+      <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3.2s" begin="1.2s" repeatCount="indefinite" />
+      <animateTransform attributeName="transform" type="scale" values="0.7;1.2;0.7" dur="3.2s" begin="1.2s" repeatCount="indefinite" />
+    </path>
+  </g>
+</svg>

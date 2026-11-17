@@ -1,0 +1,1138 @@
+/* ==========================================================================
+   CARDÁPIO DIGITAL PREMIUM — BAUDALAIRE (SABOR EM CADA DETALHE)
+   Paleta de Cores Oficial Extraída da Ficha de Projeção de Vendas:
+   - Fundo Geral: Bege Marfim Acolhedor (#F7F4EB)
+   - Cor Primária: Marrom Café Profundo (#533B2B)
+   - Cor Secundária: Marrom Caramelo Artesanal (#8C6239)
+   - Cor de Destaque: Âmbar Dourado / Latte Quente (#C69255 / #D4A373)
+   - Total da Tabela & Badges: Café au Lait Suave (#E8DAC8)
+   - Texto Principal: Marrom Café Escuro (#2D1E17)
+   - Legendas: Mocha Suave (#786659)
+   - Linhas Divisórias: Bege Claro (#E6DCD1)
+   - Cards e Superfícies: Branco Puro (#FFFFFF)
+   ========================================================================== */
+
+:root {
+  /* Paleta Oficial da Imagem da Ficha de Projeção */
+  --primary-color: #533B2B;         /* Marrom café profundo do cabeçalho da tabela */
+  --primary-dark: #38251A;          /* Tom espresso escuro para contrastes */
+  --primary-light: #6C4D38;         /* Tom café aveludado para hovers */
+  --secondary-color: #8C6239;       /* Marrom caramelo quente e sofisticado */
+  --accent-color: #C69255;          /* Âmbar dourado artesanal */
+  --accent-soft: #D4A373;           /* Latte dourado suave para detalhes */
+  --background-color: #F7F4EB;      /* Bege marfim original da imagem de referência */
+  --surface-color: #FFFFFF;         /* Branco puro para cards e modais */
+  --surface-alt: #E8DAC8;           /* Tom da linha 'Total da tabela' da referência */
+  --text-color: #2D1E17;            /* Marrom café profundo do texto e títulos */
+  --text-muted: #786659;            /* Tom suave da legenda 'Valores recalculados...' */
+  --border-color: #E6DCD1;          /* Cor das linhas divisórias da tabela original */
+  
+  /* Sistema de Elevação e Sombras */
+  --shadow-sm: 0 2px 8px rgba(45, 30, 23, 0.06);
+  --shadow-md: 0 6px 18px rgba(45, 30, 23, 0.08);
+  --shadow-lg: 0 14px 30px rgba(45, 30, 23, 0.12);
+  --shadow-hover: 0 20px 38px rgba(83, 59, 43, 0.18);
+  
+  /* Raios de Borda e Transições */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   Configurações Globais e Tipografia
+   -------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, .font-serif, .font-luxury {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+  color: var(--primary-color);
+  letter-spacing: -0.01em;
+}
+
+/* --------------------------------------------------------------------------
+   Efeitos de Fundo: Grãos e Folhas Flutuantes (SVG SMIL & CSS)
+   -------------------------------------------------------------------------- */
+.floating-decor-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.floating-item {
+  position: absolute;
+  opacity: 0.35;
+  filter: blur(0.2px);
+  will-change: transform;
+}
+
+.floating-item-1 {
+  top: 12%;
+  left: 3%;
+  width: 85px;
+  animation: floatDrift1 14s ease-in-out infinite alternate;
+}
+
+.floating-item-2 {
+  top: 36%;
+  right: 4%;
+  width: 100px;
+  animation: floatDrift2 16s ease-in-out infinite alternate;
+}
+
+.floating-item-3 {
+  top: 70%;
+  left: 5%;
+  width: 75px;
+  animation: floatDrift3 18s ease-in-out infinite alternate;
+}
+
+.floating-item-4 {
+  bottom: 8%;
+  right: 6%;
+  width: 90px;
+  animation: floatDrift1 15s ease-in-out 3s infinite alternate;
+}
+
+@keyframes floatDrift1 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(25px, 35px) rotate(15deg); }
+  100% { transform: translate(-15px, 60px) rotate(-10deg); }
+}
+
+@keyframes floatDrift2 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(-30px, 40px) rotate(-18deg); }
+  100% { transform: translate(10px, 75px) rotate(12deg); }
+}
+
+@keyframes floatDrift3 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(20px, -30px) rotate(20deg); }
+  100% { transform: translate(-20px, -50px) rotate(-15deg); }
+}
+
+/* --------------------------------------------------------------------------
+   Header / Navbar Baudalaire Premium
+   -------------------------------------------------------------------------- */
+.navbar-custom {
+  background: rgba(247, 244, 235, 0.94);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition-fast);
+  padding: 0.85rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+.navbar-custom.scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: var(--shadow-sm);
+  padding: 0.65rem 0;
+}
+
+.brand-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.brand-logo-img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  transition: transform var(--transition-smooth);
+}
+
+.brand-wrapper:hover .brand-logo-img {
+  transform: scale(1.03);
+}
+
+.nav-link-custom {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.5px;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+  text-decoration: none;
+}
+
+.nav-link-custom:hover,
+.nav-link-custom.active {
+  color: var(--secondary-color);
+  background: rgba(140, 98, 57, 0.08);
+}
+
+/* Botão do Carrinho no Topo */
+.cart-header-btn {
+  background: var(--primary-color);
+  color: #FFFFFF;
+  border: none;
+  padding: 0.55rem 1.35rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(83, 59, 43, 0.25);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  position: relative;
+}
+
+.cart-header-btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(83, 59, 43, 0.35);
+  color: #FFFFFF;
+}
+
+.cart-header-btn:active {
+  transform: translateY(0);
+}
+
+.cart-badge {
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 800;
+  min-width: 20px;
+  height: 20px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cart-badge.bump {
+  animation: badgeBump 0.35s ease-out;
+}
+
+@keyframes badgeBump {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.4); }
+  100% { transform: scale(1); }
+}
+
+/* --------------------------------------------------------------------------
+   Hero Section (Banner Principal de Alto Impacto Baudalaire)
+   -------------------------------------------------------------------------- */
+.hero-section {
+  position: relative;
+  padding: 3.5rem 0 4.5rem;
+  background: linear-gradient(135deg, rgba(247, 244, 235, 1) 0%, rgba(232, 218, 200, 0.55) 100%);
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(140, 98, 57, 0.12);
+  color: var(--secondary-color);
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(140, 98, 57, 0.2);
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 4.8vw, 3.8rem);
+  font-weight: 800;
+  color: var(--primary-color);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.hero-title span {
+  color: var(--secondary-color);
+  font-style: italic;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: 550px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+}
+
+.btn-primary-custom {
+  background: var(--primary-color);
+  color: #FFFFFF;
+  border: none;
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(83, 59, 43, 0.25);
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary-custom:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(83, 59, 43, 0.35);
+  color: #FFFFFF;
+}
+
+.btn-outline-custom {
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.78rem 1.75rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-outline-custom:hover {
+  background: var(--primary-color);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+/* Card Visual da Hero */
+.hero-visual-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-visual-card {
+  position: relative;
+  width: 100%;
+  max-width: 490px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 4px solid #FFFFFF;
+  background: #FFFFFF;
+}
+
+.hero-main-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.hero-visual-card:hover .hero-main-img {
+  transform: scale(1.03);
+}
+
+/* Emblema Flutuante com Cloche e Fumaça Aromática SVG */
+.hero-floating-badge {
+  position: absolute;
+  bottom: -15px;
+  left: -15px;
+  background: #FFFFFF;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-hover);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid var(--border-color);
+  z-index: 2;
+  animation: badgeFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes badgeFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-8px); }
+}
+
+.hero-cloche-svg {
+  width: 54px;
+  height: 54px;
+}
+
+/* --------------------------------------------------------------------------
+   Ficha de Projeção de Vendas (Reprodução Fiel da Tabela da Referência)
+   -------------------------------------------------------------------------- */
+.reference-card-section {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.ref-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.ref-table th {
+  background: var(--primary-color);
+  color: #FFFFFF;
+  padding: 10px 14px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.ref-table th:last-child,
+.ref-table td:last-child {
+  text-align: right;
+}
+
+.ref-table td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.ref-table tr:last-child td {
+  background: var(--surface-alt);
+  font-weight: 700;
+  border-bottom: none;
+}
+
+/* --------------------------------------------------------------------------
+   Barra de Filtros e Categorias
+   -------------------------------------------------------------------------- */
+.categories-nav-wrapper {
+  position: sticky;
+  top: 75px;
+  z-index: 1020;
+  background: rgba(247, 244, 235, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 2.5rem;
+}
+
+.category-pills {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.category-pills::-webkit-scrollbar {
+  display: none;
+}
+
+.category-btn {
+  background: #FFFFFF;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.92rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.category-btn svg,
+.category-btn img {
+  width: 22px;
+  height: 22px;
+  transition: transform var(--transition-fast);
+}
+
+.category-btn:hover {
+  background: var(--surface-alt);
+  border-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.category-btn:hover svg,
+.category-btn:hover img {
+  transform: rotate(5deg) scale(1.1);
+}
+
+.category-btn.active {
+  background: var(--primary-color);
+  color: #FFFFFF;
+  border-color: var(--primary-color);
+  box-shadow: 0 4px 14px rgba(83, 59, 43, 0.25);
+}
+
+.category-btn.active svg {
+  filter: brightness(0) invert(1);
+}
+
+/* Campo de Busca Rápida */
+.search-box-wrapper {
+  position: relative;
+  min-width: 220px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.6rem 1rem 0.6rem 2.4rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+  background: #FFFFFF;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  transition: var(--transition-fast);
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(140, 98, 57, 0.15);
+}
+
+.search-icon-pos {
+  position: absolute;
+  left: 0.85rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Cards Individuais dos Produtos Baudalaire
+   -------------------------------------------------------------------------- */
+.product-card {
+  background: var(--surface-color);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent-soft);
+}
+
+/* Imagem do Produto */
+.product-img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 230px;
+  overflow: hidden;
+  background: #EFE9DE;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.08);
+}
+
+/* Badges sobre a Imagem */
+.product-badge-category {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(83, 59, 43, 0.88);
+  backdrop-filter: blur(6px);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.product-badge-projecao {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--surface-alt);
+  color: var(--primary-color);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(83, 59, 43, 0.15);
+}
+
+/* Conteúdo do Card */
+.product-content {
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.product-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+/* Lista de Ingredientes extraídos da referência */
+.product-ingredients-box {
+  background: var(--background-color);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 1.25rem;
+}
+
+.ingredients-title {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 4px;
+}
+
+.ingredients-text {
+  font-size: 0.84rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Rodapé do Card: Preço Editável e Ações */
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.price-display-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.price-value-container {
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+}
+
+.price-currency {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.price-amount {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.btn-edit-price {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 4px;
+  transition: var(--transition-fast);
+}
+
+.btn-edit-price:hover {
+  color: var(--secondary-color);
+  background: rgba(140, 98, 57, 0.1);
+}
+
+/* Stepper de Quantidade */
+.qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  background: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  padding: 2px 4px;
+}
+
+.qty-btn {
+  background: transparent;
+  border: none;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.qty-btn:hover {
+  background: var(--surface-alt);
+  color: var(--primary-dark);
+}
+
+.qty-input {
+  width: 32px;
+  text-align: center;
+  border: none;
+  background: transparent;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--primary-color);
+}
+
+.qty-input:focus {
+  outline: none;
+}
+
+/* Botão de Adicionar ao Carrinho no Card */
+.btn-add-cart {
+  background: var(--primary-color);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-full);
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(83, 59, 43, 0.2);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.btn-add-cart:hover {
+  background: var(--primary-light);
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(83, 59, 43, 0.3);
+}
+
+.btn-add-cart:active {
+  transform: scale(0.96);
+}
+
+.btn-add-cart.added {
+  background: #2E7D32 !important;
+  animation: pulseGreen 0.4s ease-out;
+}
+
+@keyframes pulseGreen {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* --------------------------------------------------------------------------
+   Painel Lateral do Carrinho (Offcanvas Acolhedor)
+   -------------------------------------------------------------------------- */
+.cart-offcanvas {
+  background-color: var(--background-color);
+  border-left: 1px solid var(--border-color);
+  width: 100% !important;
+  max-width: 450px !important;
+}
+
+.cart-header {
+  background: var(--primary-color);
+  color: #FFFFFF;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-header h4 {
+  color: #FFFFFF;
+  margin: 0;
+  font-size: 1.35rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-close-cart {
+  background: transparent;
+  border: none;
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: var(--transition-fast);
+}
+
+.btn-close-cart:hover {
+  opacity: 1;
+  transform: rotate(90deg);
+}
+
+.cart-body {
+  padding: 1.5rem;
+  overflow-y: auto;
+  max-height: calc(100vh - 280px);
+}
+
+.cart-empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.empty-cart-svg {
+  width: 110px;
+  height: 110px;
+  margin-bottom: 1.25rem;
+  opacity: 0.75;
+}
+
+/* Item no Carrinho */
+.cart-item {
+  background: #FFFFFF;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-fast);
+}
+
+.cart-item:hover {
+  border-color: var(--accent-soft);
+}
+
+.cart-item-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+}
+
+.cart-item-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--primary-color);
+  margin-bottom: 2px;
+}
+
+.cart-item-price {
+  font-size: 0.88rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.cart-item-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-cart-remove {
+  background: transparent;
+  border: none;
+  color: #D32F2F;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px;
+  transition: var(--transition-fast);
+}
+
+.btn-cart-remove:hover {
+  transform: scale(1.15);
+}
+
+/* Rodapé do Carrinho */
+.cart-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #FFFFFF;
+  border-top: 1px solid var(--border-color);
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.05);
+}
+
+.cart-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  margin-bottom: 0.4rem;
+  color: var(--text-muted);
+}
+
+.cart-summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border-color);
+  margin-bottom: 1rem;
+}
+
+.cart-summary-total .total-num {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.btn-checkout-whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+  border: none;
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-checkout-whatsapp:hover {
+  background: #20BA59;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.4);
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   Botão Flutuante (FAB) Mobile
+   -------------------------------------------------------------------------- */
+.mobile-cart-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--primary-color);
+  color: #FFFFFF;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-hover);
+  z-index: 1000;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.mobile-cart-fab:hover {
+  transform: scale(1.08);
+}
+
+.mobile-fab-badge {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background: var(--accent-color);
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 800;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #FFFFFF;
+}
+
+@media (max-width: 991px) {
+  .mobile-cart-fab {
+    display: flex;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Toast de Notificação
+   -------------------------------------------------------------------------- */
+.toast-custom-container {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 1080;
+}
+
+.toast-custom {
+  background: var(--primary-color);
+  color: #FFFFFF;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: var(--shadow-hover);
+  animation: slideToastIn 0.35s ease-out;
+  border-left: 4px solid var(--accent-color);
+}
+
+@keyframes slideToastIn {
+  from { transform: translateX(-40px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* --------------------------------------------------------------------------
+   Modal de Edição de Preços
+   -------------------------------------------------------------------------- */
+.modal-header-custom {
+  background: var(--primary-color);
+  color: #FFFFFF;
+}
+
+.modal-header-custom .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+/* --------------------------------------------------------------------------
+   Rodapé Baudalaire
+   -------------------------------------------------------------------------- */
+.footer-custom {
+  background: var(--primary-dark);
+  color: #F8F5EE;
+  padding: 3rem 0 2rem;
+  margin-top: 5rem;
+  border-top: 4px solid var(--accent-color);
+  position: relative;
+  z-index: 1;
+}
+
+.footer-brand {
+  font-family: 'Cinzel', 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.footer-text {
+  color: #D4A373;
+  font-size: 0.92rem;
+}
+
+.footer-divider {
+  border-color: rgba(212, 163, 115, 0.2);
+  margin: 2rem 0 1.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   Acessibilidade
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

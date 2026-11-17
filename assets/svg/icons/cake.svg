@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- Fatia de bolo triangular -->
+  <path d="M 6,34 L 14,36 L 42,28 L 24,10 Z" fill="#D4A373" stroke="#4A3528" stroke-width="2" stroke-linejoin="round" />
+  <!-- Cobertura superior -->
+  <path d="M 6,34 L 24,10 L 42,28" stroke="#4A3528" stroke-width="2" />
+  <!-- Camada de recheio 1 -->
+  <path d="M 10,26 L 36,22" stroke="#4A3528" stroke-width="2" stroke-dasharray="3,1.5" />
+  <!-- Camada de recheio 2 -->
+  <path d="M 12,31 L 39,25" stroke="#8C6239" stroke-width="2" />
+  <!-- Cobertura escorrendo -->
+  <path d="M 24,10 Q 26,16 28,15 Q 30,20 32,18" stroke="#4A3528" stroke-width="1.8" stroke-linecap="round" fill="none" />
+  <!-- Morango/Cereja no topo -->
+  <circle cx="24" cy="9" r="3" fill="#C0392B" stroke="#4A3528" stroke-width="1" />
+  <path d="M 24,6 Q 26,4 27,5" stroke="#4E683E" stroke-width="1.5" stroke-linecap="round" />
+</svg>

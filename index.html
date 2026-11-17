@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BAUDALAIRE — Sabor em Cada Detalhe. Cardápio Digital Premium de Cafeteria e Confeitaria Artesanal.">
+  <title>BAUDALAIRE — Sabor em Cada Detalhe | Cardápio Digital</title>
+
+  <!-- Google Fonts: Cinzel, Playfair Display & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Estilos Customizados Baudalaire (Paleta da Ficha de Projeção) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/svg/icons/coffee.svg">
+</head>
+<body>
+
+  <!-- =========================================================================
+       CAMADA DECORATIVA: GRÃOS & FOLHAS FLUTUANTES SVG (SMIL & CSS)
+       ========================================================================= -->
+  <div class="floating-decor-layer" aria-hidden="true">
+    <div class="floating-item floating-item-1">
+      <img src="assets/svg/animations/floating-baudalaire.svg" alt="" width="100%">
+    </div>
+    <div class="floating-item floating-item-2">
+      <img src="assets/svg/animations/floating-baudalaire.svg" alt="" width="100%">
+    </div>
+    <div class="floating-item floating-item-3">
+      <img src="assets/svg/animations/floating-baudalaire.svg" alt="" width="100%">
+    </div>
+    <div class="floating-item floating-item-4">
+      <img src="assets/svg/animations/floating-baudalaire.svg" alt="" width="100%">
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       CABEÇALHO PROFISSIONAL / NAVBAR
+       ========================================================================= -->
+  <header class="navbar-custom">
+    <div class="container d-flex align-items-center justify-content-between">
+      
+      <!-- Marca / Logo Oficial Baudalaire na Paleta Café & Caramelo -->
+      <a href="#" class="brand-wrapper">
+        <img src="assets/svg/logo/baudalaire-logo.svg" alt="BAUDALAIRE — Sabor em Cada Detalhe" class="brand-logo-img">
+      </a>
+
+      <!-- Navegação Desktop Focada no Cardápio -->
+      <nav class="d-none d-lg-flex align-items-center gap-2">
+        <a href="#hero" class="nav-link-custom">Início</a>
+        <a href="#cardapio" class="nav-link-custom active">Cardápio</a>
+      </nav>
+
+      <!-- Ações do Header: Botão do Carrinho -->
+      <div class="d-flex align-items-center gap-3">
+        <button class="cart-header-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-controls="cartOffcanvas">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="8" cy="21" r="1.5"/><circle cx="19" cy="21" r="1.5"/>
+            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+          </svg>
+          <span class="d-none d-sm-inline">Meu Pedido</span>
+          <span class="cart-badge cart-count-badge">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO SECTION (BANNER PRINCIPAL DE ALTO IMPACTO BAUDALAIRE)
+       ========================================================================= -->
+  <section id="hero" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        
+        <!-- Conteúdo Textual da Hero -->
+        <div class="col-12 col-lg-6">
+          <div class="hero-tag">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Alta Gastronomia & Confeitaria Boutique
+          </div>
+
+          <h1 class="hero-title">
+            O aroma perfeito do café e o <span>sabor em cada detalhe</span>.
+          </h1>
+
+          <p class="hero-subtitle">
+            A tradição da alta confeitaria e cafeteria artesanal Baudalaire. Saboreie nossas tortas nobres, cafés especiais, sucos naturais e doces finos preparados diariamente com ingredientes selecionados.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#cardapio" class="btn-primary-custom">
+              <span>Explorar Cardápio</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Visual da Hero com Fotografia Gastronômica e Animação da Cloche SVG SMIL -->
+        <div class="col-12 col-lg-6">
+          <div class="hero-visual-container">
+            <div class="hero-visual-card">
+              <img src="assets/images/banner/hero-cafeteria.jpg" alt="BAUDALAIRE — Sabor em Cada Detalhe" class="hero-main-img">
+            </div>
+
+            <!-- Cloche Gourmet Flutuante com Fumaça Aromática em SVG SMIL -->
+            <div class="hero-floating-badge">
+              <div class="hero-cloche-svg">
+                <object type="image/svg+xml" data="assets/svg/animations/cloche-steam.svg" width="100%" height="100%"></object>
+              </div>
+              <div>
+                <strong class="d-block" style="font-size: 0.95rem; color: var(--primary-color); font-family: 'Cinzel', serif;">Alta Gastronomia</strong>
+                <small class="text-muted" style="font-size: 0.78rem;">Sabor em Cada Detalhe</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SEÇÃO DO CARDÁPIO: CATEGORIAS & BUSCA INSTANTÂNEA
+       ========================================================================= -->
+  <section id="cardapio" class="py-5">
+    
+    <!-- Barra Fixa de Categorias com Ícones SVG -->
+    <div class="categories-nav-wrapper">
+      <div class="container d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+        
+        <div class="category-pills">
+          <button class="category-btn active" data-category="all" type="button">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Todos os Itens
+          </button>
+          
+          <button class="category-btn" data-category="tortas" type="button">
+            <img src="assets/svg/icons/pie.svg" alt="" width="20" height="20">
+            Tortas Doces & Salgadas
+          </button>
+          
+          <button class="category-btn" data-category="bebidas" type="button">
+            <img src="assets/svg/icons/coffee.svg" alt="" width="20" height="20">
+            Cafés & Sucos
+          </button>
+
+          <button class="category-btn" data-category="doces-salgados" type="button">
+            <img src="assets/svg/icons/pastry.svg" alt="" width="20" height="20">
+            Doces & Salgados
+          </button>
+
+          <button class="category-btn" data-category="bolos" type="button">
+            <img src="assets/svg/icons/cake.svg" alt="" width="20" height="20">
+            Bolo em Fatias
+          </button>
+        </div>
+
+        <!-- Campo de Busca -->
+        <div class="search-box-wrapper">
+          <span class="search-icon-pos">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Buscar no cardápio...">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Título da Seção do Cardápio -->
+    <div class="container mb-4">
+      <div class="d-flex align-items-end justify-content-between flex-wrap gap-2">
+        <div>
+          <span class="text-uppercase fw-bold text-secondary small letter-spacing-1">Cardápio Oficial</span>
+          <h2 class="font-serif display-6 mb-1">Nossos Produtos Selecionados</h2>
+          <p class="text-muted mb-0 small">Escolha suas delícias e adicione ao pedido. Clique no ícone de lápis em qualquer valor para editar o preço em tempo real.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Grade dos Produtos (Renderizada pelo JavaScript) -->
+    <div class="container">
+      <div class="row" id="productsGrid">
+        <!-- Renderizado dinamicamente via script.js -->
+      </div>
+    </div>
+
+  </section>
+
+  <!-- =========================================================================
+       RODAPÉ
+       ========================================================================= -->
+  <footer class="footer-custom">
+    <div class="container">
+      <div class="row g-4 justify-content-between">
+        <div class="col-12 col-md-5">
+          <div class="footer-brand">BAUDALAIRE</div>
+          <p class="footer-text mb-3">
+            Sabor em Cada Detalhe — Cardápio Digital Premium desenvolvido com fotografia gastronômica individual, animações vetoriais SVG e alta gastronomia artesanal.
+          </p>
+          <small class="text-white-50">© 2026 BAUDALAIRE. Todos os direitos reservados.</small>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <h6 class="text-white fw-bold mb-3">Horário de Atendimento</h6>
+          <p class="footer-text small mb-1">Segunda a Sexta: 07:30 às 20:00</p>
+          <p class="footer-text small mb-1">Sábados: 08:00 às 21:00</p>
+          <p class="footer-text small mb-0">Domingos e Feriados: 08:30 às 18:00</p>
+        </div>
+
+        <div class="col-12 col-md-3">
+          <h6 class="text-white fw-bold mb-3">Atendimento & Pedidos</h6>
+          <p class="footer-text small mb-1">WhatsApp: (11) 99999-9999</p>
+          <p class="footer-text small mb-1">Retirada no Balcão ou Delivery</p>
+          <p class="footer-text small mb-0">Consumo no local ou encomendas</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       PAINEL LATERAL DO CARRINHO (OFFCANVAS BOOTSTRAP 5)
+       ========================================================================= -->
+  <div class="offcanvas offcanvas-end cart-offcanvas" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+    
+    <div class="cart-header">
+      <h4 id="cartOffcanvasLabel">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="8" cy="21" r="1.5"/><circle cx="19" cy="21" r="1.5"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+        Seu Pedido (<span class="cart-count-badge">0</span>)
+      </h4>
+      <button type="button" class="btn-close-cart" data-bs-dismiss="offcanvas" aria-label="Fechar">✕</button>
+    </div>
+
+    <div class="cart-body">
+      
+      <!-- Estado Vazio -->
+      <div id="cartEmptyState" class="cart-empty-state">
+        <div class="empty-cart-svg mx-auto">
+          <object type="image/svg+xml" data="assets/svg/animations/cloche-steam.svg" width="100%" height="100%"></object>
+        </div>
+        <h5 class="font-serif text-primary">Seu carrinho está vazio</h5>
+        <p class="text-muted small">Adicione cafés, fatias de torta ou delícias da vitrine Baudalaire!</p>
+      </div>
+
+      <!-- Container Dinâmico de Itens do Carrinho -->
+      <div id="cartItemsContainer">
+        <!-- Renderizado pelo script.js -->
+      </div>
+
+    </div>
+
+    <!-- Rodapé Fixo do Carrinho com Totais e Botão de Finalização -->
+    <div class="cart-footer">
+      <div class="cart-summary-row">
+        <span>Subtotal</span>
+        <strong id="cartSubtotal">R$ 0,00</strong>
+      </div>
+      <div class="cart-summary-total">
+        <span>Total do Pedido</span>
+        <span class="total-num" id="cartTotal">R$ 0,00</span>
+      </div>
+
+      <div class="d-flex flex-column gap-2">
+        <button id="btnCheckoutWhatsapp" class="btn-checkout-whatsapp" type="button">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.667-.699c.969.586 1.761.884 2.793.884 3.179 0 5.767-2.587 5.768-5.766.001-3.18-2.587-5.77-5.768-5.77zm3.364 8.163c-.144.405-.837.774-1.17.824-.312.045-.634.07-1.78-.407-1.464-.608-2.42-2.094-2.493-2.193-.073-.099-.594-.79-.594-1.506 0-.716.375-1.068.508-1.213.133-.145.29-.181.387-.181.097 0 .193.001.277.005.089.005.208-.034.325.247.121.29.412 1.006.448 1.08.036.074.06.161.012.257-.048.097-.072.157-.144.241-.072.085-.152.19-.217.255-.073.072-.149.15-.064.296.085.145.378.624.811 1.009.558.497 1.029.651 1.174.724.145.072.23.06.315-.037.085-.097.362-.422.459-.567.097-.145.193-.121.326-.073.133.048.845.398.99.47.145.073.242.109.278.17.036.06.036.35-.108.755z"/></svg>
+          <span>Finalizar Pedido via WhatsApp</span>
+        </button>
+
+        <div class="d-flex justify-content-between align-items-center mt-1">
+          <button id="btnClearCart" class="btn btn-link text-muted p-0 small text-decoration-none" type="button">
+            Esvaziar carrinho
+          </button>
+          <small class="text-muted" style="font-size: 0.75rem;">Calculado em tempo real</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- =========================================================================
+       BOTÃO FLUTUANTE (FAB) DO CARRINHO EM DISPOSITIVOS MÓVEIS
+       ========================================================================= -->
+  <button class="mobile-cart-fab" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas" aria-label="Abrir Carrinho">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="8" cy="21" r="1.5"/><circle cx="19" cy="21" r="1.5"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+    <span class="mobile-fab-badge cart-count-badge">0</span>
+  </button>
+
+  <!-- =========================================================================
+       MODAL DE EDIÇÃO DE PREÇOS
+       ========================================================================= -->
+  <div class="modal fade" id="priceEditModal" tabindex="-1" aria-labelledby="priceEditModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 shadow-lg">
+        <div class="modal-header modal-header-custom">
+          <h5 class="modal-title font-serif" id="priceEditModalLabel">Editar Preço do Produto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p class="text-muted small mb-2">Item selecionado:</p>
+          <h5 class="fw-bold text-primary mb-3" id="editPriceProductName">Produto</h5>
+          
+          <label for="editPriceInput" class="form-label small fw-bold text-secondary">Novo Preço Unitário (R$):</label>
+          <div class="input-group mb-3">
+            <span class="input-group-text bg-light fw-bold">R$</span>
+            <input type="number" step="0.50" min="0.50" id="editPriceInput" class="form-control form-control-lg fw-bold" placeholder="0.00">
+          </div>
+          <small class="text-muted d-block">A alteração recalcula imediatamente os cards e os itens no carrinho.</small>
+        </div>
+        <div class="modal-footer bg-light">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary-custom px-4" id="btnConfirmPriceEdit">Salvar Preço</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Container de Toasts de Notificação -->
+  <div class="toast-custom-container" id="toastContainer" aria-live="polite"></div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- Lógica da Aplicação (Vanilla JS) -->
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 430 115" width="100%" height="100%">
+  <defs>
+    <!-- Gradiente Café Profundo e Caramelo Baudalaire (Extraído da Imagem) -->
+    <linearGradient id="baudalaireCoffeeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8C6239" />
+      <stop offset="50%" stop-color="#533B2B" />
+      <stop offset="100%" stop-color="#38251A" />
+    </linearGradient>
+
+    <!-- Gradiente Dourado Latte Quente -->
+    <linearGradient id="baudalaireLatteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4A373" />
+      <stop offset="50%" stop-color="#C69255" />
+      <stop offset="100%" stop-color="#8C6239" />
+    </linearGradient>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#533B2B" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- ==================== EMBLEMA BAUDALAIRE NA PALETA CAFÉ & CARAMELO ==================== -->
+  <g transform="translate(12, 6)" filter="url(#softShadow)">
+    
+    <!-- Círculo de Fundo Suave Café au Lait -->
+    <circle cx="56" cy="52" r="48" fill="#E8DAC8" opacity="0.35" />
+
+    <!-- Toque de Chef (Chapéu) no Topo do B -->
+    <path d="M 36,22 C 32,12 42,6 50,10 C 56,4 70,6 73,14 C 80,10 88,16 86,24 C 88,28 82,32 78,33 L 42,33 C 38,30 34,27 36,22 Z" 
+          fill="url(#baudalaireCoffeeGrad)" />
+    <!-- Faixa do chapéu de chef com detalhe em Latte Dourado -->
+    <rect x="40" y="32" width="40" height="5" rx="1.5" fill="#D4A373" />
+
+    <!-- Letra B Majestosa com Garfo Integrado -->
+    <path d="M 44,37 L 44,88 L 66,88 C 78,88 86,80 86,71 C 86,64 80,60 72,58 C 78,56 82,50 82,45 C 82,38 76,37 64,37 Z 
+             M 54,45 L 62,45 C 68,45 72,47 72,51 C 72,55 68,57 62,57 L 54,57 Z 
+             M 54,66 L 64,66 C 71,66 76,69 76,74 C 76,80 71,81 64,81 L 54,81 Z" 
+          fill="url(#baudalaireCoffeeGrad)" />
+
+    <!-- Garfo Curvilíneo entrelaçado no B -->
+    <path d="M 28,78 Q 43,68 60,48" fill="none" stroke="url(#baudalaireLatteGrad)" stroke-width="3" stroke-linecap="round" />
+    <path d="M 58,49 L 61,44 M 60,51 L 64,46 M 62,53 L 66,48" stroke="url(#baudalaireLatteGrad)" stroke-width="1.8" stroke-linecap="round" />
+
+    <!-- Cloche Gourmet ao Lado -->
+    <g transform="translate(80, 44)">
+      <!-- Puxador da Cloche -->
+      <circle cx="26" cy="8" r="3.5" fill="url(#baudalaireLatteGrad)" />
+      <!-- Cúpula da Cloche -->
+      <path d="M 6,26 C 6,12 16,8 26,8 C 36,8 46,12 46,26 Z" fill="url(#baudalaireCoffeeGrad)" />
+      <!-- Base da Cloche -->
+      <line x1="2" y1="26" x2="50" y2="26" stroke="url(#baudalaireLatteGrad)" stroke-width="3" stroke-linecap="round" />
+      <line x1="0" y1="29" x2="52" y2="29" stroke="url(#baudalaireCoffeeGrad)" stroke-width="1.5" stroke-linecap="round" />
+      
+      <!-- Vapor Aromático saindo da Cloche -->
+      <path d="M 26,5 Q 30,1 28,-3" stroke="#D4A373" stroke-width="1.5" stroke-linecap="round" opacity="0.8">
+        <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="d" values="M 26,5 Q 30,1 28,-3; M 26,5 Q 23,1 26,-3; M 26,5 Q 30,1 28,-3" dur="2.5s" repeatCount="indefinite" />
+      </path>
+    </g>
+
+    <!-- Fita / Base Curva sob o Monograma -->
+    <path d="M 18,87 Q 58,79 120,87 Q 63,82 18,87 Z" fill="url(#baudalaireLatteGrad)" />
+
+  </g>
+
+  <!-- ==================== TIPOGRAFIA BAUDALAIRE ==================== -->
+  <text x="175" y="62" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="37" font-weight="800" fill="#533B2B" letter-spacing="3.5">BAUDALAIRE</text>
+  
+  <!-- Slogan: SABOR EM CADA DETALHE -->
+  <text x="178" y="82" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#8C6239" letter-spacing="4.5">SABOR EM CADA DETALHE</text>
+
+  <!-- Linha divisória e talheres cruzados decorativos -->
+  <g transform="translate(178, 91)">
+    <line x1="0" y1="0" x2="80" y2="0" stroke="#D4A373" stroke-width="1" opacity="0.6" />
+    <path d="M 90,-4 L 98,4 M 98,-4 L 90,4" stroke="#8C6239" stroke-width="1.8" stroke-linecap="round" />
+    <line x1="108" y1="0" x2="225" y2="0" stroke="#D4A373" stroke-width="1" opacity="0.6" />
+  </g>
+</svg>

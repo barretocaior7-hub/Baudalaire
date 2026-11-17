@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <path d="M 6,34 C 14,40 34,40 42,34 L 40,24 C 32,28 16,28 8,24 Z" fill="#D4A373" stroke="#4A3528" stroke-width="2" stroke-linejoin="round" />
+  <path d="M 6,34 L 8,24 L 24,10 L 40,24 L 42,34" fill="#C69255" stroke="#4A3528" stroke-width="2" stroke-linejoin="round" opacity="0.3" />
+  <path d="M 8,24 C 16,28 32,28 40,24 L 24,10 Z" fill="#F8F5EE" stroke="#4A3528" stroke-width="2" stroke-linejoin="round" />
+  <!-- Trança / Detalhe na crosta da torta -->
+  <path d="M 8,24 Q 16,21 24,24 Q 32,21 40,24" stroke="#8C6239" stroke-width="2" stroke-linecap="round" />
+  <path d="M 24,10 L 24,24" stroke="#8C6239" stroke-width="1.5" stroke-dasharray="2,2" />
+  <circle cx="24" cy="18" r="2.5" fill="#C0392B" />
+</svg>

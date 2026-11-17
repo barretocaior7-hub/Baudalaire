@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none">
+  <!-- Copo -->
+  <path d="M 14,14 L 18,40 C 18,42 30,42 30,40 L 34,14 Z" fill="#F8F5EE" stroke="#4A3528" stroke-width="2.5" stroke-linejoin="round" />
+  <!-- Líquido de suco -->
+  <path d="M 15,20 L 18,40 C 18,41.5 30,41.5 30,40 L 33,20 Z" fill="#D4A373" opacity="0.85" />
+  <!-- Canudo -->
+  <path d="M 27,24 L 29,6 L 36,4" stroke="#8C6239" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Rodela de laranja/fruta na borda -->
+  <circle cx="16" cy="14" r="6" fill="#C69255" stroke="#4A3528" stroke-width="1.8" />
+  <circle cx="16" cy="14" r="3.5" fill="#F8F5EE" />
+  <!-- Cubo de gelo -->
+  <rect x="20" y="24" width="7" height="7" rx="1.5" stroke="#FFFFFF" stroke-width="1.2" fill="#FFFFFF" opacity="0.4" transform="rotate(15 23.5 27.5)" />
+</svg>
