@@ -1,5 +1,5 @@
 /**
- * CARDÁPIO DIGITAL PREMIUM — BAUDALAIRE (SABOR EM CADA DETALHE)
+ * CARDÁPIO DIGITAL PREMIUM — BOUDALAIRE (SABOR EM CADA DETALHE)
  * Vanilla JavaScript (ES6+), Modular, Sem Frameworks
  * Fidelidade Total à Ficha de Projeção de Vendas da Cafeteria
  */
@@ -15,10 +15,10 @@ const ORIGINAL_PRODUCTS = [
     categoryName: 'Tortas & Especiais',
     price: 25.00,
     originalQty: 70, // Quantidade da ficha de projeção
-    description: 'Fatia nobre de torta artesanal Baudalaire com crosta folhada dourada e recheios autorais com ingredientes frescos e especiarias refinadas.',
+    description: 'Fatia nobre de torta artesanal Boudalaire com crosta folhada dourada e recheios autorais com ingredientes frescos e especiarias refinadas.',
     ingredients: 'Massa brisée amanteigada, recheios nobres doces e salgados, tomatinho cereja, manjericão fresco e flor de sal.',
     image: 'assets/images/products/tortas-doces-salgadas.jpg',
-    badge: 'Especialidade Baudalaire',
+    badge: 'Especialidade Boudalaire',
     available: true
   },
   {
@@ -54,7 +54,7 @@ const ORIGINAL_PRODUCTS = [
     categoryName: 'Doces & Salgados Finos',
     price: 5.00,
     originalQty: 80, // Quantidade da ficha de projeção
-    description: 'Seleção impecável de folhados dourados amanteigados, petit fours e docinhos clássicos da vitrine de alta confeitaria Baudalaire.',
+    description: 'Seleção impecável de folhados dourados amanteigados, petit fours e docinhos clássicos da vitrine de alta confeitaria Boudalaire.',
     ingredients: 'Farinha de trigo premium, manteiga pura, queijos nobres, recheios doces e salgados artesanais e especiarias.',
     image: 'assets/images/products/doces-e-salgados.jpg',
     badge: 'Alta Confeitaria',
@@ -80,8 +80,8 @@ const ORIGINAL_PRODUCTS = [
 // =============================================================================
 class MenuStateManager {
   constructor() {
-    this.storageKeyPrices = 'baudalaire_custom_prices';
-    this.storageKeyCart = 'baudalaire_cart_items';
+    this.storageKeyPrices = 'boudalaire_custom_prices';
+    this.storageKeyCart = 'boudalaire_cart_items';
     this.products = this.loadProducts();
   }
 
@@ -144,7 +144,7 @@ class MenuStateManager {
 class ShoppingCart {
   constructor(stateManager) {
     this.stateManager = stateManager;
-    this.storageKey = 'baudalaire_cart_v2';
+    this.storageKey = 'boudalaire_cart_v2';
     this.items = this.loadCart();
   }
 
@@ -323,7 +323,7 @@ class MenuUIController {
     }).format(value);
   }
 
-  // Renderização da Grade de Cards dos Produtos Baudalaire
+  // Renderização da Grade de Cards dos Produtos Boudalaire
   renderCatalog() {
     if (!this.productsGrid) return;
 
@@ -503,7 +503,7 @@ class MenuUIController {
   handleCheckout() {
     if (this.cart.items.length === 0) return;
 
-    let message = `👑 *PEDIDO — BAUDALAIRE (SABOR EM CADA DETALHE)*\n`;
+    let message = `👑 *PEDIDO — BOUDALAIRE (SABOR EM CADA DETALHE)*\n`;
     message += `────────────────────────────\n`;
     
     this.cart.items.forEach((item, index) => {
@@ -516,7 +516,7 @@ class MenuUIController {
     message += `*Total de Itens:* ${this.cart.getTotalItemsCount()}\n`;
     message += `*VALOR TOTAL:* ${this.formatCurrency(this.cart.getTotal())}\n`;
     message += `────────────────────────────\n`;
-    message += `Olá! Gostaria de confirmar meu pedido na Baudalaire. Por favor, me informe a previsão. Obrigado!`;
+    message += `Olá! Gostaria de confirmar meu pedido na Boudalaire. Por favor, me informe a previsão. Obrigado!`;
 
     const encoded = encodeURIComponent(message);
     const whatsappUrl = `https://api.whatsapp.com/send?phone=5511999999999&text=${encoded}`;

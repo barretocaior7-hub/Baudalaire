@@ -63,8 +63,8 @@
 
   </g>
 
-  <!-- ==================== TIPOGRAFIA BAUDALAIRE ==================== -->
-  <text x="175" y="62" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="37" font-weight="800" fill="#533B2B" letter-spacing="3.5">BAUDALAIRE</text>
+  <!-- ==================== TIPOGRAFIA BOUDALAIRE ==================== -->
+  <text x="175" y="62" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="37" font-weight="800" fill="#533B2B" letter-spacing="3.5">BOUDALAIRE</text>
   
   <!-- Slogan: SABOR EM CADA DETALHE -->
   <text x="178" y="82" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="9.5" font-weight="700" fill="#8C6239" letter-spacing="4.5">SABOR EM CADA DETALHE</text>
